@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Student1
+{
+    int id;
+    String name;
+    double fees;
+    double scholarship;
+    
+    Student1(int id,String name)
+    {
+        this.id= id;
+        this.name= name;
+        this.fees= 0;
+        this.scholarship= 0;
+    }
+    
+    Student1(int id,String name, double fees)
+    {
+        this(id, name);
+        this.fees= fees;
+    }
+    
+    Student1(int id, String name, double fees, double scholarship)
+    {
+        this(id, name, fees);
+        this.scholarship= scholarship;
+    }
+    
+    void register()
+    {
+        System.out.println("Student ID:"+id);System.out.println("Student Name:"+name);
+        System.out.println("Fees:"+fees);
+        System.out.println("Scholarship:"+scholarship);
+        System.out.println("--------------------------");
+    }
+}
+
+class Student
+{
+    public static void main(String[] args)
+    { 
+        Student1 s1= new Student1(101,"Manasi"); 
+        Student1 s2= new Student1(102,"Niraj",50000); 
+        Student1 s3= new Student1(103,"Riddhi",60000,15000); 
+        s1.register(); 
+        s2.register(); 
+        s3.register(); 
+    } 
+}
