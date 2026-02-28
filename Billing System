@@ -1,0 +1,52 @@
+class Bil
+{
+    double amount;
+    double discount;
+    
+    Bill(double amount)
+    {
+        this.amount = amount;
+        this.discount = 0;
+    } 
+    
+    Bill(double amount, double discount) 
+    { 
+        this(amount); 
+        this.discount = discount; 
+    } 
+    
+    void applyDiscount(double percentage) 
+    { 
+        double d = amount * (percentage / 100); 
+        amount = amount - d; 
+        System.out.println("Percentage Discount Applied: " + percentage + "%"); 
+    } 
+    
+    void applyDiscount(double discount, boolean isFlat) 
+    { 
+        if(isFlat) 
+        { 
+            amount = amount - discount; 
+            System.out.println("Flat Discount Applied: " + discount); 
+        } 
+    } 
+    
+    void showBill() 
+    { 
+        System.out.println("Final Bill Amount: " + amount); 
+        System.out.println("-------------------------"); 
+    } 
+} 
+
+class BillingSystem 
+{ 
+    public static void main(String[] args) 
+    { 
+        Bill b1 = new Bill(1000); 
+        Bill b2 = new Bill(2000, 200); 
+        b1.applyDiscount(10); 
+        b1.showBill(); 
+        b2.applyDiscount(100, true); 
+        b2.showBill(); 
+    } 
+}
